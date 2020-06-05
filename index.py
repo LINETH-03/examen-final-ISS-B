@@ -57,10 +57,33 @@ def Diasvividos():
     dat2 = dato
     answer = abs(dat1-dat2).days 
 
-    respuesta = f"Usted nacio el {dato} y ha vivido {answer} días."
+    resp = f"Usted nació el {dato} y ha vivido {answer} días."
 
-    Resultado.configure(text = respuesta)
+    Resultado.configure(text = resp)
 
+#FUNCION 3 PARA MOSTRAR SI EL NOMBRE ES PAR O IMPAR
+def PARIMPAR():
+    #--concatNombApelli = f"{nombre.get()}{apellido.get()}"
+    name1 = f"{cajanombre.get()}"
+    surname = f"{cajaapellido.get()}"
+
+    contname = len(name1)
+    contsurmame = len(surname)
+  
+#--Validaciones
+    if contname % 2 == 0:
+        NB = f"su Nombre {name1} es número Par  "
+    else:
+        NB = f"su Nombre {name1} es número Inpar  "
+
+    if contsurmame % 2 == 0:
+        PLL = f"su Apellido {surname} es número Par ."
+    else:
+        PLL = f"su Apellido {surname} es número Inpar ."
+
+    resp = f"{NB} y  {PLL} "
+
+    Resultado.configure(text =resp )
 
 #FUNCION 5 PARA MOSTRAR AL REVES EL TEXTO
 def ALREVES():
@@ -77,7 +100,7 @@ funcion1 = Button(ventana, text = "Función 1",font=("Exotc350 Bd BT", 8), width
 funcion1.grid(row=7, column=1)
 funcion2 = Button(ventana, text = "Función 2", command=Diasvividos ,font=("Exotc350 Bd BT", 8), width=10)
 funcion2.grid(row=7, column=2)
-funcion3 = Button(ventana, text = "Función 3",font=("Exotc350 Bd BT", 8), width=10)
+funcion3 = Button(ventana, text = "Función 3",command= PARIMPAR,font=("Exotc350 Bd BT", 8), width=10)
 funcion3.grid(row=7, column=3)
 funcion4 = Button(ventana, text = "Función 4", font=("Exotc350 Bd BT", 8), width=10)
 funcion4.grid(row=7, column=4)
