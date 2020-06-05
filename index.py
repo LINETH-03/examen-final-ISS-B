@@ -1,44 +1,36 @@
-import tkinter
-ventana = tkinter.Tk()
+from tkinter import *
+ventana = Tk()
+ancho = 650
+alto = 400
+ventana.geometry(str(ancho)+'x'+str(alto))
 ventana.title("Examen Final ISC-B-Lily")
-ventana.geometry ("660x400")
-#etiquetas
-bienvenido = tkinter.Label(ventana, text ="BIENVENIDO",font = ("Exotc350 Bd BT",25))
-bienvenido.grid(row=1, column=3)
+
+
+#etiqueta de bienvenida
+bienvenido =Label(ventana, text ="BIENVENIDO",font = ("Exotc350 Bd BT",25)).place(x=250,y=10)
 
 #los entry son los botones 
-nombre= tkinter.Label(ventana, text ="Nombre",font = ("Exotc350 Bd BT",15))
-cajanombre=tkinter.Entry(ventana,)
-nombre.grid(row=2, column=2)
-cajanombre.grid(row=2, column=3)
-apellido= tkinter.Label(ventana, text ="Apellido",font = ("Exotc350 Bd BT",15))
-cajaapellido=tkinter.Entry(ventana,)
-apellido.grid(row=3, column=2)
-cajaapellido.grid(row=3, column=3)
-dia= tkinter.Label(ventana, text ="Día",font = ("Exotc350 Bd BT",15))
-cajadia=tkinter.Entry(ventana)
-dia.grid(row=4, column=2)
-cajadia.grid(row=4, column=3)
-mes= tkinter.Label(ventana, text ="Mes",font = ("Exotc350 Bd BT",15))
-cajames=tkinter.Entry(ventana)
-mes.grid(row=5, column=2)
-cajames.grid(row=5, column=3)
-Año= tkinter.Label(ventana, text ="Año",font = ("Exotc350 Bd BT",15))
-cajaaño=tkinter.Entry(ventana)
-Año.grid(row=6, column=2)
-cajaaño.grid(row=6, column=3)
+nombre= Label(ventana, text ="Nombre",font = ("Exotc350 Bd BT",15)).place(x=150,y=60)
+apellido= Label(ventana, text ="Apellido",font = ("Exotc350 Bd BT",15)).place(x=150,y=90)
+dia= Label(ventana, text ="Día",font = ("Exotc350 Bd BT",15)).place(x=150,y=120)
+mes= Label(ventana, text ="Mes",font = ("Exotc350 Bd BT",15)).place(x=150,y=150)
+Año= Label(ventana, text ="Año",font = ("Exotc350 Bd BT",15)).place(x=150,y=180)
+
+cajanombre= Entry(ventana).place(x=300,y=60)
+cajaapellido= Entry(ventana).place(x=300,y=90)
+dia=StringVar()
+cajadia= Entry(ventana, textvariable=dia).place(x=300,y=120)
+mes= StringVar()
+cajames=Entry(ventana, textvariable= mes).place(x=300,y=150)
+Año=StringVar()
+cajaaño= Entry(ventana, textvariable = Año).place(x=300,y=180)
+
 #botones
-funcion1= tkinter.Button (ventana, text = "Funcion1", padx= 15, pady= 10,font=("Exotc350 Bd BT",15))
-funcion2= tkinter.Button (ventana, text = "Funcion2", padx= 15, pady= 10,font=("Exotc350 Bd BT",15))
-funcion3= tkinter.Button (ventana, text = "Funcion3", padx= 15, pady= 10,font=("Exotc350 Bd BT",15))
-funcion4= tkinter.Button (ventana, text = "Funcion4", padx= 15, pady= 10,font=("Exotc350 Bd BT",15))
-Funcion5= tkinter.Button (ventana, text = "Funcion5", padx= 15, pady= 10,font=("Exotc350 Bd BT",15))
-funcion1.grid(row=7, column=1)
-funcion2.grid(row=7, column=2)
-funcion3.grid(row=7, column=3)
-funcion4.grid(row=7, column=4)
-Funcion5.grid(row=7, column=5)
-resultado= tkinter.Label(ventana,text="k",font = ("Exotc350 Bd BT",20))
-resultado.grid(row=8, column=3)
+funcion1= Button (ventana, text = "Funcion1", padx= 15, pady= 10,font=("Exotc350 Bd BT",15)).place(x=50,y=230)
+funcion2= Button (ventana, text = "Funcion2", padx= 15, pady= 10,font=("Exotc350 Bd BT",15)).place(x=170,y=230)
+funcion3= Button (ventana, text = "Funcion3", padx= 15, pady= 10,font=("Exotc350 Bd BT",15)).place(x=280,y=230)
+funcion4= Button (ventana, text = "Funcion4", padx= 15, pady= 10,font=("Exotc350 Bd BT",15)).place(x=395,y=230)
+Funcion5= Button (ventana, text = "Funcion5", padx= 15, pady= 10,font=("Exotc350 Bd BT",15)).place(x=500,y=230)
+resultado= Label(ventana).place(x=300,y=300)
 
 ventana.mainloop()
