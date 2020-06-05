@@ -1,36 +1,70 @@
 from tkinter import *
+
 ventana = Tk()
-ancho = 650
-alto = 400
+
+ancho = 400
+alto = 300
+
 ventana.geometry(str(ancho)+'x'+str(alto))
-ventana.title("Examen Final ISC-B-Lily")
+ventana.title('Examen Final ISC-LILY')
 
 
-#etiqueta de bienvenida
-bienvenido =Label(ventana, text ="BIENVENIDO",font = ("Exotc350 Bd BT",25)).place(x=250,y=10)
+etibienvenido= Label(text="Bienvenido",font=("Exotc350 Bd BT",35))
+etibienvenido.grid(row=1, column=2, columnspan=6)
 
-#los entry son los botones 
-nombre= Label(ventana, text ="Nombre",font = ("Exotc350 Bd BT",15)).place(x=150,y=60)
-apellido= Label(ventana, text ="Apellido",font = ("Exotc350 Bd BT",15)).place(x=150,y=90)
-dia= Label(ventana, text ="Día",font = ("Exotc350 Bd BT",15)).place(x=150,y=120)
-mes= Label(ventana, text ="Mes",font = ("Exotc350 Bd BT",15)).place(x=150,y=150)
-Año= Label(ventana, text ="Año",font = ("Exotc350 Bd BT",15)).place(x=150,y=180)
+etiNombre = Label(text="Nombre:",font=("Exotc350 Bd BT", 14))
+etiNombre.grid(row=2, column=1, columnspan=2)
+##CAJA DE TEXTO PARA EL NOMBRE
+cajanombre = Entry(ventana)
+cajanombre.grid(row=2, column=3, columnspan=4, sticky= W + E)
 
-cajanombre= Entry(ventana).place(x=300,y=60)
-cajaapellido= Entry(ventana).place(x=300,y=90)
-dia=StringVar()
-cajadia= Entry(ventana, textvariable=dia).place(x=300,y=120)
-mes= StringVar()
-cajames=Entry(ventana, textvariable= mes).place(x=300,y=150)
-Año=StringVar()
-cajaaño= Entry(ventana, textvariable = Año).place(x=300,y=180)
+etiApellido = Label(text="Apellido:",font=("Exotc350 Bd BT", 14))
+etiApellido.grid(row=3, column=1, columnspan=2)
+##CAJA DE TEXTO PARA EL APELLIDO
+cajaapellido = Entry(ventana)
+cajaapellido.grid(row=3, column=3, columnspan=4, sticky= W + E)
 
-#botones
-funcion1= Button (ventana, text = "Funcion1", padx= 15, pady= 10,font=("Exotc350 Bd BT",15)).place(x=50,y=230)
-funcion2= Button (ventana, text = "Funcion2", padx= 15, pady= 10,font=("Exotc350 Bd BT",15)).place(x=170,y=230)
-funcion3= Button (ventana, text = "Funcion3", padx= 15, pady= 10,font=("Exotc350 Bd BT",15)).place(x=280,y=230)
-funcion4= Button (ventana, text = "Funcion4", padx= 15, pady= 10,font=("Exotc350 Bd BT",15)).place(x=395,y=230)
-Funcion5= Button (ventana, text = "Funcion5", padx= 15, pady= 10,font=("Exotc350 Bd BT",15)).place(x=500,y=230)
-resultado= Label(ventana).place(x=300,y=300)
+etiDia = Label(text="Día:",font=("Exotc350 Bd BT", 14))
+etiDia.grid(row=4, column=1, columnspan=2)
+##CAJA DE TEXTO PARA EL DIA
+cajadia = Entry(ventana)
+cajadia.grid(row=4, column=3, columnspan=4, sticky= W + E)
+
+etiMes = Label(text="Mes:",font=("Exotc350 Bd BT", 14))
+etiMes.grid(row=5, column=1, columnspan=2)
+#CAJA DE TEXTO PARA EL MES
+cajames = Entry(ventana)
+cajames.grid(row=5, column=3, columnspan=4, sticky= W + E)
+
+etiAño = Label(text="Año:",font=("Exotc350 Bd BT", 14))
+etiAño.grid(row=6, column=1, columnspan=2)
+#CAJA DE TEXTO PARA EL AÑO
+cajaaño = Entry(ventana)
+cajaaño.grid(row=6, column=3, columnspan=4, sticky= W + E)
+#_____________________________________________________________________________
+
+#FUNCION PARA MOSTRAR AL REVES EL TEXTO
+def ALREVES():
+    reva = cajanombre.get()+" "+cajaapellido.get()
+    reva = reva[::-1]
+    Resultado["text"] = cajanombre.get() + " " + cajaapellido.get() + " al revés es: " + reva
+
+
+#BOTONES
+#_________________________________________________________________________________________
+funcion1 = Button(ventana, text = "Función 1",font=("Exotc350 Bd BT", 8), width=10)
+funcion1.grid(row=7, column=1)
+funcion2 = Button(ventana, text = "Función 2",font=("Exotc350 Bd BT", 8), width=10)
+funcion2.grid(row=7, column=2)
+funcion3 = Button(ventana, text = "Función 3",font=("Exotc350 Bd BT", 8), width=10)
+funcion3.grid(row=7, column=3)
+funcion4 = Button(ventana, text = "Función 4", font=("Exotc350 Bd BT", 8), width=10)
+funcion4.grid(row=7, column=4)
+funcion5 = Button(ventana, text = "Función 5",command=ALREVES,font=("Exotc350 Bd BT", 8), width=10)
+funcion5.grid(row=7, column=5)
+#_____________________________________________________________________________________________
+#ETIQUETA PARA MOSTRAR RESULTADO
+Resultado = Label(ventana,text="RESULTADO",font=("Exotc350 Bd BT", 14))
+Resultado.grid(row=8, column=1, columnspan=6)
 
 ventana.mainloop()
