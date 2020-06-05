@@ -1,16 +1,18 @@
 import tkinter
 ventana = tkinter.Tk()
-ventana.geometry ("500x500")
+ventana.title("Examen Final ISC-B-Lily")
+ventana.geometry ("660x400")
 #etiquetas
 bienvenido = tkinter.Label(ventana, text ="BIENVENIDO",font = ("Exotc350 Bd BT",25))
 bienvenido.grid(row=1, column=3)
+
+#los entry son los botones 
 nombre= tkinter.Label(ventana, text ="Nombre",font = ("Exotc350 Bd BT",15))
-#los entry son los botones
-cajanombre=tkinter.Entry(ventana)
+cajanombre=tkinter.Entry(ventana,)
 nombre.grid(row=2, column=2)
 cajanombre.grid(row=2, column=3)
 apellido= tkinter.Label(ventana, text ="Apellido",font = ("Exotc350 Bd BT",15))
-cajaapellido=tkinter.Entry(ventana)
+cajaapellido=tkinter.Entry(ventana,)
 apellido.grid(row=3, column=2)
 cajaapellido.grid(row=3, column=3)
 dia= tkinter.Label(ventana, text ="Día",font = ("Exotc350 Bd BT",15))
@@ -23,8 +25,8 @@ mes.grid(row=5, column=2)
 cajames.grid(row=5, column=3)
 Año= tkinter.Label(ventana, text ="Año",font = ("Exotc350 Bd BT",15))
 cajaaño=tkinter.Entry(ventana)
-Año.grid(row=5, column=2)
-cajaaño.grid(row=5, column=3)
+Año.grid(row=6, column=2)
+cajaaño.grid(row=6, column=3)
 #botones
 funcion1= tkinter.Button (ventana, text = "Funcion1", padx= 15, pady= 10,font=("Exotc350 Bd BT",15))
 funcion2= tkinter.Button (ventana, text = "Funcion2", padx= 15, pady= 10,font=("Exotc350 Bd BT",15))
