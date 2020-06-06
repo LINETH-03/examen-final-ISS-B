@@ -1,3 +1,6 @@
+#GITHUB=LINETH-03
+#Lily Lineth Pérez Hernández
+#06/06/2020
 from tkinter import *
 import math
 import datetime
@@ -57,7 +60,7 @@ def binaa():
         ba=format(a, '0b')
 
         Resultado['text'] = 'La fecha es: {}/{}/{} y  en binario es:{}/{}/{}'.format(d,m,a,bd,bm,ba)
-#FUNCION 2 PARA MOSTRAR AL REVES EL TEXTO
+#FUNCION 2 PARA MOSTRAR LOS DIAS VIVIDOS
 def Diasvividos():
     da = int(cajadia.get())
     mse = int(cajames.get())
@@ -66,7 +69,7 @@ def Diasvividos():
     fec = datetime.datetime.now()
     resto = fec - nac
     viv = resto.days
-    Resultado['text'] = 'Usted nació {}/{}/{}: y a vivido {} dias'.format(da,mse,an,viv)
+    Resultado['text'] = 'Usted nació {}/{}/{}: y ha vivido {} dias'.format(da,mse,an,viv)
 
 
 #FUNCION 3 PARA MOSTRAR SI EL NOMBRE ES PAR O IMPAR
