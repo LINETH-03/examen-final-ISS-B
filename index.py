@@ -1,6 +1,7 @@
 from tkinter import *
-from datetime import date
-from datetime import datetime
+import math
+import datetime
+
 ventana = Tk()
 ancho = 475
 alto = 300
@@ -61,18 +62,15 @@ def binaa():
 
 #FUNCION 2 PARA MOSTRAR AL REVES EL TEXTO
 def Diasvividos():
-    fechaString = f"{cajaaño.get()}-{cajames.get()}-{cajadia.get()}"
-    dato = datetime.strptime(fechaString, '%Y-%m-%d')
+    da = int(cajadia.get())
+    mse = int(cajames.get())
+    an = int(cajaaño.get())
+    nac = datetime.datetime(an, mse, da)
+    fec = datetime.datetime.now()
+    resto = fec - nac
+    viv = resto.days
+    Resultado['text'] = 'Usted nació {}/{}/{}: y a vivido {} dias'.format(da,mse,an,viv)
 
-    today= datetime.today()
-    
-    dat1 = today
-    dat2 = dato
-    answer = abs(dat1-dat2).days 
-
-    resp = f"Usted nació el {dato} y ha vivido {answer} días."
-
-    Resultado.configure(text = resp)
 
 #FUNCION 3 PARA MOSTRAR SI EL NOMBRE ES PAR O IMPAR
 def PARIMPAR():
