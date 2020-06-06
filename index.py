@@ -1,16 +1,16 @@
 from tkinter import *
 import math
 import datetime
-
+#dimensiones de la ventana
 ventana = Tk()
-ancho = 475
+ancho = 550
 alto = 300
 ventana.geometry(str(ancho)+'x'+str(alto))
 ventana.title('Examen Final ISC-LILY')
 
-
+#ETIQUETA PARA EL SALUDO
 etibienvenido= Label(text="Bienvenido",font=("Exotc350 Bd BT",35))
-etibienvenido.grid(row=1, column=2, columnspan=6)
+etibienvenido.grid(row=1, column=1, columnspan=7)
 #_____________________________________________________________________________
 ##CAJA DE TEXTO PARA EL NOMBRE Y ETIQUETA
 etiNombre = Label(text="Nombre:",font=("Exotc350 Bd BT", 14))
@@ -57,9 +57,6 @@ def binaa():
         ba=format(a, '0b')
 
         Resultado['text'] = 'La fecha es: {}/{}/{} y  en binario es:{}/{}/{}'.format(d,m,a,bd,bm,ba)
-
-   
-
 #FUNCION 2 PARA MOSTRAR AL REVES EL TEXTO
 def Diasvividos():
     da = int(cajadia.get())
@@ -79,9 +76,6 @@ def PARIMPAR():
 
     contname = len(name1)
     contsurmame = len(surname)
-
-
-  
 #--Validaciones para nombre y apellido 
     if contname % 2 == 0:
         NB = f"su Nombre {name1} es número Par  "
@@ -124,15 +118,15 @@ def ALREVES():
 
 #BOTONES
 #_________________________________________________________________________________________
-funcion1 = Button(ventana, text = "Función 1", command=binaa, font=("Exotc350 Bd BT", 10), padx= 10, pady=8)
+funcion1 = Button(ventana, text = "Función 1", command=binaa, font=("Exotc350 Bd BT", 12), padx= 15, pady=8)
 funcion1.grid(row=7, column=1)
-funcion2 = Button(ventana, text = "Función 2", command=Diasvividos ,font=("Exotc350 Bd BT", 10),padx= 10, pady=8)
+funcion2 = Button(ventana, text = "Función 2", command=Diasvividos ,font=("Exotc350 Bd BT", 12),padx= 15, pady=8)
 funcion2.grid(row=7, column=2)
-funcion3 = Button(ventana, text = "Función 3",command= PARIMPAR,font=("Exotc350 Bd BT", 10), padx= 10, pady=8)
+funcion3 = Button(ventana, text = "Función 3",command= PARIMPAR,font=("Exotc350 Bd BT", 12), padx= 15, pady=8)
 funcion3.grid(row=7, column=3)
-funcion4 = Button(ventana, text = "Función 4", command=vocalconson, font=("Exotc350 Bd BT", 10),padx= 10, pady=8)
+funcion4 = Button(ventana, text = "Función 4", command=vocalconson, font=("Exotc350 Bd BT", 12),padx= 15, pady=8)
 funcion4.grid(row=7, column=4)
-funcion5 = Button(ventana, text = "Función 5",command=ALREVES,font=("Exotc350 Bd BT", 10),padx= 10, pady=8)
+funcion5 = Button(ventana, text = "Función 5",command=ALREVES,font=("Exotc350 Bd BT", 12),padx= 15, pady=8)
 funcion5.grid(row=7, column=5)
 #_____________________________________________________________________________________________
 #ETIQUETA PARA MOSTRAR RESULTADO
