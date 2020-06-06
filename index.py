@@ -46,7 +46,16 @@ etiAño.grid(row=6, column=1, columnspan=2)
 cajaaño = Entry(ventana)
 cajaaño.grid(row=6, column=3, columnspan=3, sticky= W + E)
 #_____________________________________________________________________________
-#binario funcion 1
+#binario funcion 1 
+def binaa():
+        d=int(cajadia.get())
+        m=int(cajames.get())
+        a=int(cajaaño.get())
+        bd=format(d, '0b' )
+        bm=format(m, '0b')
+        ba=format(a, '0b')
+
+        Resultado['text'] = 'La fecha es: {}/{}/{} y  en binario es:{}/{}/{}'.format(d,m,a,bd,bm,ba)
 
    
 
@@ -117,7 +126,7 @@ def ALREVES():
 
 #BOTONES
 #_________________________________________________________________________________________
-funcion1 = Button(ventana, text = "Función 1", font=("Exotc350 Bd BT", 10), padx= 10, pady=8)
+funcion1 = Button(ventana, text = "Función 1", command=binaa, font=("Exotc350 Bd BT", 10), padx= 10, pady=8)
 funcion1.grid(row=7, column=1)
 funcion2 = Button(ventana, text = "Función 2", command=Diasvividos ,font=("Exotc350 Bd BT", 10),padx= 10, pady=8)
 funcion2.grid(row=7, column=2)
@@ -131,5 +140,4 @@ funcion5.grid(row=7, column=5)
 #ETIQUETA PARA MOSTRAR RESULTADO
 Resultado = Label(ventana, font=("Exotc350 Bd BT", 14))
 Resultado.grid(row=8, column=1, columnspan=6)
-
 ventana.mainloop()
